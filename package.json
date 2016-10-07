@@ -1,6 +1,6 @@
 {
   "name": "trek-http-error",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Http Error for Trek.js",
   "main": "index.js",
   "scripts": {
