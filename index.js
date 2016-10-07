@@ -15,10 +15,12 @@ const { STATUS_CODES } = require('http')
 
 class HttpError {
   constructor (code = 500, message = '', origin = null, expose = false) {
-    let status = code
-    if ('ENOENT' === code) {
-      status = 404
-      message = STATUS_CODES[404]
+    let status
+
+    if (origin) status = origin.status || origin.statusCode
+
+    if (!status) {
+      status = 'ENOENT' === code ? 404 : code
     }
 
     this.code = code
