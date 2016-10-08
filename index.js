@@ -28,12 +28,8 @@ class HttpError {
     this.message = message || STATUS_CODES[status] || 'unknown'
     this.origin = origin
     this.expose = expose
-
-    Error.captureStackTrace(this)
-  }
-
-  get name () {
-    return 'HttpError'
+    this.name = this.constructor.name
+    Error.captureStackTrace(this, this.constructor)
   }
 }
 
