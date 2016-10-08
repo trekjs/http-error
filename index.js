@@ -24,7 +24,7 @@ class HttpError {
     }
 
     this.code = code
-    this.status = status
+    this.status = status in STATUS_CODES ? status : 500
     this.message = message || STATUS_CODES[status] || 'unknown'
     this.origin = origin
     this.expose = expose
