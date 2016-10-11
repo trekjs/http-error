@@ -1,6 +1,6 @@
 {
   "name": "trek-http-error",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Http Error for Trek.js",
   "repository": "trekjs/http-error",
   "license": "MIT",
