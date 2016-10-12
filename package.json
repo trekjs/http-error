@@ -16,7 +16,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "xo",
-    "test": "xo && nyc --reporter=lcov ava --no-cache -r babel-register -c 5"
+    "test": "xo && nyc --reporter=lcov ava --no-cache -c 5"
   },
   "devDependencies": {
     "ava": "0",
@@ -44,11 +44,6 @@
     "space": true,
     "ignores": [],
     "rules": {
-      "babel/arrow-parens": [
-        2,
-        "as-needed"
-      ],
-      "babel/object-curly-spacing": 0,
       "curly": 0,
       "import/no-named-as-default": 0,
       "max-lines": 0,
@@ -60,6 +55,14 @@
             "fixme"
           ],
           "location": "anywhere"
+        }
+      ],
+      "object-curly-spacing": [
+        "error",
+        "always",
+        {
+          "arraysInObjects": true,
+          "objectsInObjects": true
         }
       ],
       "space-before-function-paren": [
