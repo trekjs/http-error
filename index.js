@@ -29,7 +29,10 @@ module.exports = class HttpError extends Error {
     this.message = message || STATUS_CODES[status] || 'unknown'
     this.origin = origin
     this.expose = expose
-    this.name = this.constructor.name
     Error.captureStackTrace(this, this.constructor)
+  }
+
+  get name () {
+    return 'HttpError'
   }
 }

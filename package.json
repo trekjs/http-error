@@ -16,22 +16,28 @@
   "main": "index.js",
   "scripts": {
     "lint": "xo",
-    "test": "xo && nyc --reporter=lcov ava --no-cache -c 5"
+    "test": "xo && nyc ava"
   },
   "devDependencies": {
-    "ava": "0",
-    "babel-plugin-transform-async-to-generator": "6",
+    "ava": "0.16",
     "babel-preset-es2016": "6",
     "babel-register": "6",
-    "nyc": "8",
-    "xo": "0"
+    "nyc": "8.3",
+    "xo": "0.17"
+  },
+  "ava": {
+    "concurrency": 5,
+    "require": "babel-register"
   },
   "babel": {
-    "plugins": [
-      "transform-async-to-generator"
-    ],
     "presets": [
       "es2016"
+    ]
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
     ]
   },
   "xo": {
