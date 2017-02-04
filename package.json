@@ -19,7 +19,7 @@
     "test": "xo && nyc ava"
   },
   "devDependencies": {
-    "ava": "0.17",
+    "ava": "0.18",
     "babel-preset-es2016": "6",
     "babel-register": "6",
     "nyc": "10",
