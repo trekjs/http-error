@@ -15,14 +15,14 @@ const { STATUS_CODES } = require('http')
  */
 
 module.exports = class HttpError extends Error {
-  constructor (code = 500, message = '', origin = null, expose = false) {
+  constructor(code = 500, message = '', origin = null, expose = false) {
     super()
 
     let status
 
     if (origin) status = origin.status || origin.statusCode
 
-    if (!status) status = 'ENOENT' === code ? 404 : code
+    if (!status) status = code === 'ENOENT' ? 404 : code
 
     this.code = code
     this.status = status in STATUS_CODES ? status : 500
@@ -32,7 +32,7 @@ module.exports = class HttpError extends Error {
     Error.captureStackTrace(this, this.constructor)
   }
 
-  get name () {
+  get name() {
     return 'HttpError'
   }
 }
