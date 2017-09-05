@@ -12,11 +12,11 @@ test('should have error stack and status', t => {
 })
 
 test('should return origin status', t => {
-  const error = new HttpError(404, '', { status: 400 })
+  const error = new HttpError('Not Found', '', { status: 400 })
   t.throws(() => {
     t.not(error.stack, undefined)
     t.is(error.name, 'HttpError')
     t.is(error.status, 400)
     throw error
-  }, 'Not Found')
+  }, 'Bad Request')
 })
